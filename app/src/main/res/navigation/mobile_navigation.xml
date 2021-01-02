@@ -22,4 +22,10 @@
         android:name="com.hcmus.trello.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+
+    <fragment
+        android:id="@+id/nav_list"
+        android:name="com.hcmus.trello.ui.list.ListFragment"
+        android:label="List"
+        tools:layout="@layout/fragment_list"/>
 </navigation>
