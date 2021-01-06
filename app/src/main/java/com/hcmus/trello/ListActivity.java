@@ -30,8 +30,8 @@ public class ListActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
-        list = (List) getIntent().getSerializableExtra("MyList");
-        listName = list.getName();
+        list = (List) getIntent().getSerializableExtra("list");
+        listName = list.getName().toString();
 
         edtListName = findViewById(R.id.edt_list_name);
         edt_newCard = findViewById(R.id.edt_new_card);
@@ -50,28 +50,22 @@ public class ListActivity extends AppCompatActivity{
         edtListName.setText(listName);
 
         edtListName.addTextChangedListener(new TextWatcher() {
-            @SuppressLint("ResourceAsColor")
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                edtListName.setTextColor(R.color.purple_500);
             }
 
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
 
-            @SuppressLint("ResourceAsColor")
             @Override
             public void afterTextChanged(Editable s) {
-                if (s.toString().isEmpty())
-                    edtListName.setText(listName);
-                else {
                     listName = s.toString();
                     list.rename(listName);
-                }
-                edtListName.setTextColor(R.color.black);
             }
+
         });
+
 
         edt_newCard.addTextChangedListener(new TextWatcher() {
             @SuppressLint("ResourceAsColor")
@@ -104,15 +98,14 @@ public class ListActivity extends AppCompatActivity{
                 if(btn_addNewCard.isClickable())
                 {
                     list.addCard(new Card(edt_newCard.getText().toString()));
-                    cardAdapter.notifyDataSetChanged();
+                    OnListChanged();
+                    edt_newCard.getText().clear();
                 }
             }
         });
-
-
     }
 
-    private void OnListChanged() {
+    public void OnListChanged() {
         if (cardAdapter.getItemCount() == 0)
         {
             rl_emptyList.setVisibility(View.VISIBLE);
@@ -121,7 +114,6 @@ public class ListActivity extends AppCompatActivity{
         {
             rl_emptyList.setVisibility(View.GONE);
         }
-
         cardAdapter.notifyDataSetChanged();
     }
 }

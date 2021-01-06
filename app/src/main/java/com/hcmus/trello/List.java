@@ -11,6 +11,7 @@ public class List implements Serializable {
 
     public List(int _ID, String _lname)
     {
+        list_cards = new ArrayList<>();
         ID = _ID;
         list_name = _lname;
         isArchive = false;
@@ -19,10 +20,12 @@ public class List implements Serializable {
 
     public List(String _lname)
     {
+        list_cards = new ArrayList<>();
         ID = 0;
         list_name = _lname;
         isArchive = false;
         list_cards.clear();
+
     }
 
     public List(int _ID, String _lname, boolean _isAr, ArrayList<Card> _lcard)

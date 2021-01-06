@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -25,11 +26,13 @@ public class RecycleViewAdapterCard extends RecyclerView.Adapter<RecycleViewAdap
     public class CardHolder extends RecyclerView.ViewHolder {
         TextView mCardName;
         Button btn_del;
+        FrameLayout fl_card;
 
         public CardHolder(@NonNull View itemView) {
             super(itemView);
             mCardName = (TextView) itemView.findViewById(R.id.card_name);
             btn_del = (Button) itemView.findViewById(R.id.delete_card);
+            fl_card = (FrameLayout) itemView.findViewById(R.id.card);
 
             btn_del.setOnClickListener(new View.OnClickListener(){
                 @Override
@@ -40,7 +43,7 @@ public class RecycleViewAdapterCard extends RecyclerView.Adapter<RecycleViewAdap
                 }
             });
 
-            itemView.setOnClickListener(new View.OnClickListener() {
+            fl_card.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     int position = getAdapterPosition();
@@ -63,7 +66,6 @@ public class RecycleViewAdapterCard extends RecyclerView.Adapter<RecycleViewAdap
     @Override
     public void onBindViewHolder(@NonNull CardHolder holder, int position) {
         holder.mCardName.setText(list.getCard(position).getName());
-
     }
 
     @Override

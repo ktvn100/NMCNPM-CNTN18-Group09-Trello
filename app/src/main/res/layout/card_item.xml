@@ -3,15 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <FrameLayout
     android:layout_width="fill_parent"
-        android:layout_margin="5dp"
+    android:layout_margin="5dp"
     android:layout_height="wrap_content"
     android:padding="5dp"
-    android:background="@drawable/card_border_default">
+    android:background="@drawable/card_border_default"
+    android:id="@+id/card">
 
         <TextView
             android:id="@+id/card_name"
@@ -31,6 +32,7 @@
             android:layout_gravity="right|center_vertical"
             android:layout_marginRight="10dp"
             android:background="@android:drawable/ic_delete"
+            android:clickable="false"
             />
 
     </FrameLayout>
