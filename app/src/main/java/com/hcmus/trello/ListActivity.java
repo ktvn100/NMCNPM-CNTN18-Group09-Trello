@@ -73,6 +73,42 @@ public class ListActivity extends AppCompatActivity{
             }
         });
 
+        edt_newCard.addTextChangedListener(new TextWatcher() {
+            @SuppressLint("ResourceAsColor")
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (s.toString().isEmpty())
+                    btn_addNewCard.setClickable(false);
+                else
+                    btn_addNewCard.setClickable(true);
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @SuppressLint("ResourceAsColor")
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (s.toString().isEmpty())
+                    btn_addNewCard.setClickable(false);
+                else
+                    btn_addNewCard.setClickable(true);
+            }
+        });
+
+        btn_addNewCard.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v) {
+                if(btn_addNewCard.isClickable())
+                {
+                    list.addCard(new Card(edt_newCard.getText().toString()));
+                    cardAdapter.notifyDataSetChanged();
+                }
+            }
+        });
+
 
     }
 

@@ -3,8 +3,11 @@ package com.hcmus.trello;
 import java.io.Serializable;
 
 public class Card implements Serializable {
-    public Card(){}
+    private String card_name;
+    public Card(String name){
+        card_name = name;
+    }
     public String getName() {
-        return "no name";
+        return card_name;
     }
 }
