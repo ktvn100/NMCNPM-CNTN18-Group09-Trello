@@ -1,4 +1,10 @@
 package com.hcmus.trello;
 
-public class Card {
+import java.io.Serializable;
+
+public class Card implements Serializable {
+    public Card(){}
+    public String getName() {
+        return "no name";
+    }
 }

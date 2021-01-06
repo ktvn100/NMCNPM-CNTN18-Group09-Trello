@@ -1,8 +1,9 @@
 package com.hcmus.trello;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class List {
+public class List implements Serializable {
     private int ID;
     private boolean isArchive;
     private String list_name;
@@ -32,8 +33,18 @@ public class List {
         isArchive=_isAr;
     }
 
-    public String getList_name(){
+    public String getName(){
         return list_name;
+    }
+
+    public Card getCard(int position)
+    {
+        return list_cards.get(position);
+    }
+
+    public int getCountCard()
+    {
+        return list_cards.size();
     }
 
     public void addCard(Card c)
