@@ -10,4 +10,7 @@ public class Card implements Serializable {
     public String getName() {
         return card_name;
     }
+    public void rename(String newname){
+        card_name = newname;
+    }
 }

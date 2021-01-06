@@ -4,10 +4,12 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +25,7 @@ public class ListActivity extends AppCompatActivity{
     RecyclerView.LayoutManager layoutManager;
     EditText edt_newCard;
     Button btn_addNewCard;
+    Button btn_sort;
     String listName;
 
     @Override
@@ -36,6 +39,7 @@ public class ListActivity extends AppCompatActivity{
         edtListName = findViewById(R.id.edt_list_name);
         edt_newCard = findViewById(R.id.edt_new_card);
         btn_addNewCard = findViewById(R.id.btn_add_new_card);
+        btn_sort = findViewById(R.id.btn_sort);
         rl_emptyList = findViewById(R.id.empty_list);
         recyclerView = findViewById(R.id.recycler_view_card);
 
@@ -99,8 +103,18 @@ public class ListActivity extends AppCompatActivity{
                 {
                     list.addCard(new Card(edt_newCard.getText().toString()));
                     OnListChanged();
-                    edt_newCard.getText().clear();
+                    edt_newCard.setText("");
                 }
+            }
+        });
+
+        btn_sort.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v) {
+                list.sort();
+                OnListChanged();
+                Toast.makeText(ListActivity.this,list.getCard(1).getName(),Toast.LENGTH_SHORT).show();
             }
         });
     }

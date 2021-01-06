@@ -2,6 +2,9 @@ package com.hcmus.trello;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class List implements Serializable {
     private int ID;
@@ -63,5 +66,14 @@ public class List implements Serializable {
     public void rename(String new_lname)
     {
         list_name = new_lname;
+    }
+
+    public void sort()
+    {
+        Collections.sort(list_cards, new Comparator<Card>() {
+            public int compare(Card s1, Card s2) {
+                return s1.getName().compareTo(s2.getName());
+            }
+        });
     }
 }
