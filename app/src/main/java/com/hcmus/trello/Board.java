@@ -1,4 +1,4 @@
-package com.hcmus.trello.board_screen;
+package com.hcmus.trello;
 
 import java.util.ArrayList;
 
