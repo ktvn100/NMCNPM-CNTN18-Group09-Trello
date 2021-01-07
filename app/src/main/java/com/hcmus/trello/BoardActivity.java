@@ -34,8 +34,6 @@ public class BoardActivity extends AppCompatActivity implements MyListAdapter.On
         setTitle("Board1");
 
         initUI();
-
-
     }
 
     private void initUI() {
