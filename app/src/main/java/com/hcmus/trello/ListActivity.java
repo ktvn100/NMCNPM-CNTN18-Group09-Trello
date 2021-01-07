@@ -114,7 +114,6 @@ public class ListActivity extends AppCompatActivity{
             public void onClick(View v) {
                 list.sort();
                 OnListChanged();
-                Toast.makeText(ListActivity.this,list.getCard(1).getName(),Toast.LENGTH_SHORT).show();
             }
         });
     }
