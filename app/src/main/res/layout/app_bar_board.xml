@@ -29,7 +29,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView_board"
             android:layout_width="match_parent"
-            android:layout_height="670dp"
+            android:layout_height="601dp"
             android:layout_gravity="bottom"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/appbar_board" />
