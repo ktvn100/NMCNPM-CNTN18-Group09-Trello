@@ -9,5 +9,6 @@
     <string name="action_search">Search</string>
     <string name="action_notifications">Notifications</string>
 
-    <string name="menu_board">Boards</string>
+    <string name="menu_board">Home</string>
+    <string name="logout">Logout</string>
 </resources>

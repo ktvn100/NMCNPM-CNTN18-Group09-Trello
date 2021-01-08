@@ -33,19 +33,18 @@ public class BoardFragment extends Fragment {
         boardViewModel = new ViewModelProvider(this).get(BoardViewModel.class);
 
         View root = inflater.inflate(R.layout.fragment_board, container, false);
-        final TextView textView = root.findViewById(R.id.text_board);
         final Button button = root.findViewById(R.id.bth_board);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getActivity(), BoardActivity.class));
-                getActivity().finish();
+                //getActivity().finish();
             }
         });
         boardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
-                textView.setText(s);
+
             }
         });
         return root;

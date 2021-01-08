@@ -7,6 +7,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -102,7 +103,11 @@ public class BoardActivity extends AppCompatActivity implements MyListAdapter.On
     //Intent vao list dat o day
     @Override
     public void onListNameClick(int position) {
-        Toast.makeText(this, "Open list: " + mListNames.get(position), Toast.LENGTH_LONG).show();
+        //Toast.makeText(this, "Open list: " + mListNames.get(position), Toast.LENGTH_LONG).show();
+        List list = new List("mylist");
+        Intent intent = new Intent(this, ListActivity.class);
+        intent.putExtra("list", list);
+        startActivity(intent);
     }
 
 
