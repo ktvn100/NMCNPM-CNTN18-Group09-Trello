@@ -14,15 +14,16 @@
 
         <activity android:name=".BoardActivity"
                 android:theme="@style/Theme.Trello.NoActionBar">
+
+        </activity>
+
+        <activity android:name=".Login"
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <activity android:name=".Login">
-
         </activity>
         <activity android:name=".Register">
         </activity>
@@ -31,6 +32,7 @@
         <activity android:name=".CardActivity">
         </activity>
         <activity android:name=".MainActivity">
+
         </activity>
 
     </application>
