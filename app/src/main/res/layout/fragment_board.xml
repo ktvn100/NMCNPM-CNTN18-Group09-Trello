@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.board.BoardFragment"
-    android:id="@+id/home_layout">
+    android:id="@+id/board_layout">
 
     <Button
         android:id="@+id/bth_board"
