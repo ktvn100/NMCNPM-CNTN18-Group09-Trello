@@ -23,8 +23,8 @@ public class HomeFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
 
-        View root = inflater.inflate(R.layout.fragment_board, container, false);
-        final Button button = root.findViewById(R.id.bth_board);
+        View root = inflater.inflate(R.layout.fragment_home, container, false);
+        final Button button = root.findViewById(R.id.bth_home_1);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
